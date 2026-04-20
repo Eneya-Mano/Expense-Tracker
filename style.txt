@@ -1,0 +1,327 @@
+/* ============================
+   RESET & BASE
+============================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f0f2f8;
+  color: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================
+   HEADER
+============================ */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  padding: 28px 32px;
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 2.4rem;
+  background-color: rgba(255,255,255,0.1);
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.header-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+.header-date {
+  margin-left: auto;
+  background-color: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ============================
+   MAIN LAYOUT
+============================ */
+.main {
+  flex: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ============================
+   SECTION TITLE
+============================ */
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e4ef;
+}
+
+/* ============================
+   SUMMARY CARDS
+============================ */
+.cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 26px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.card--total {
+  background: linear-gradient(145deg, #0f3460, #1a1a2e);
+  color: #ffffff;
+  border: none;
+}
+
+.card--category {
+  background: linear-gradient(145deg, #e84393, #c62a7a);
+  color: #ffffff;
+  border: none;
+}
+
+.card--month {
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.card-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.card--month .card-label {
+  color: #888;
+}
+
+.card-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.card--month .card-value {
+  color: #0f3460;
+}
+
+.card-note {
+  font-size: 0.82rem;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+.card--month .card-note {
+  color: #888;
+}
+
+/* ============================
+   EXPENSE CATEGORIES
+============================ */
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid #e8ecf4;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.category-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dot--food          { background-color: #f4a261; }
+.dot--transport     { background-color: #2a9d8f; }
+.dot--shopping      { background-color: #e84393; }
+.dot--entertainment { background-color: #7b5ea7; }
+
+.category-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  min-width: 140px;
+}
+
+.category-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.category-bar-wrap {
+  width: 160px;
+  height: 8px;
+  background-color: #eef0f7;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.category-bar {
+  height: 100%;
+  border-radius: 50px;
+  background-color: #f4a261;
+}
+
+.bar--transport     { background-color: #2a9d8f; }
+.bar--shopping      { background-color: #e84393; }
+.bar--entertainment { background-color: #7b5ea7; }
+
+.category-amount {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  min-width: 68px;
+  text-align: right;
+}
+
+/* ============================
+   RECENT TRANSACTIONS
+============================ */
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid #e8ecf4;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.txn-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.txn-icon {
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f8;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.txn-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.txn-date {
+  font-size: 0.8rem;
+  color: #9a9ab0;
+  margin-top: 3px;
+}
+
+.txn-amount {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.txn-debit  { color: #e84393; }
+.txn-credit { color: #2a9d8f; }
+
+/* ============================
+   FOOTER
+============================ */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.82rem;
+  color: #aab0c0;
+  border-top: 1px solid #e0e4ef;
+  background-color: #ffffff;
+}
